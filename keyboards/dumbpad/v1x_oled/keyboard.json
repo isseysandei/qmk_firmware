@@ -17,7 +17,6 @@
     "bootloader": "caterina",
     "features": {
         "bootmagic": false,
-        "mousekey": false,
         "extrakey": true,
         "encoder": true,
         "oled": true,
