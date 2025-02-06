@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "notes": "",
+  "documentation": "\"This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
+  "keyboard": "dumbpad/v1x_oled",
+  "keymap": "test_custom",
+  "layout": "LAYOUT",
+  "layers": [
+    [
+      "KC_PSCR",
+      "KC_PGUP",
+      "KC_PGDN",
+      "TT(1)",
+      "KC_INS",
+      "KC_P9",
+      "KC_P6",
+      "KC_P3",
+      "KC_CALC",
+      "KC_P8",
+      "KC_P5",
+      "KC_P2",
+      "KC_MUTE",
+      "KC_NUM",
+      "KC_P7",
+      "KC_P4",
+      "KC_P1"
+    ],
+    [
+      "KC_F16",
+      "KC_F20",
+      "MS_BTN4",
+      "TT(0)",
+      "KC_F15",
+      "KC_F19",
+      "MS_BTN3",
+      "QK_BOOT",
+      "KC_F14",
+      "KC_F18",
+      "MS_BTN2",
+      "MS_WHLR",
+      "KC_WSCH",
+      "KC_F13",
+      "KC_F17",
+      "MS_BTN1",
+      "MS_WHLL"
+    ]
+  ],
+  "author": ""
+}
