@@ -33,9 +33,9 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     // Left encoder
     } else if (index == 1) {
         if (clockwise) {
-            tap_code(KC_MNXT);
+            tap_code(MS_WHLU);
         } else {
-            tap_code(KC_MPRV);
+            tap_code(MS_WHLD);
         }
     }
     return true;
@@ -154,7 +154,7 @@ bool oled_task_kb(void) {
 
     led_t led_state = host_keyboard_led_state(); // caps lock stuff, prints CAPS on new line if caps led is on
     oled_set_cursor(0, 1);
-    oled_write_P(led_state.caps_lock ? PSTR("CAPS") : PSTR("       "), false);
+    oled_write_P(led_state.caps_lock ? PSTR("CAPSL") : PSTR("       "), false);
 
     return true;
 }
