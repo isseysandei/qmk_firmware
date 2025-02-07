@@ -20,7 +20,9 @@
         "extrakey": true,
         "encoder": true,
         "oled": true,
-        "wpm": true
+        "wpm": true,
+        "mousekey": true,
+        "joystick":true
     },
     "layouts": {
         "LAYOUT": {
