@@ -17,7 +17,7 @@
 
 #include <stdio.h>
 char wpm_str[10];
-
+int keypressdetected = 1;
 #ifdef ENCODER_ENABLE
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) {
@@ -121,7 +121,7 @@ static void render_anim(void) {
             oled_write_raw_P(tap[abs((TAP_FRAMES - 1) - current_tap_frame)], ANIM_SIZE);
         }
     }
-    if (get_current_wpm() != 000) {
+    if (get_current_wpm() != 000 || keypressdetected != 0) {
 
         oled_on(); // not essential but turns on animation OLED with any alpha keypress
         if (timer_elapsed32(anim_timer) > ANIM_FRAME_DURATION) {
@@ -158,5 +158,15 @@ bool oled_task_kb(void) {
     oled_write_P(led_state.caps_lock ? PSTR("CAPSL") : PSTR("       "), false);
 
     return true;
+}
+
+void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed) {  //if any key was pressed down
+    //press
+	keypressdetected = 1;
+  }else{
+	  //no press
+	  keypressdetected = 0;
+  }
 }
 #endif
