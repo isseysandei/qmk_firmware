@@ -17,7 +17,7 @@
 
 #include <stdio.h>
 char wpm_str[10];
-int keypressdetected = 1;
+int keypressdetected = 0;
 #ifdef ENCODER_ENABLE
 bool encoder_update_kb(uint8_t index, bool clockwise) {
     if (!encoder_update_user(index, clockwise)) {
@@ -164,9 +164,13 @@ void post_process_record_user(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {  //if any key was pressed down
     //press
 	keypressdetected = 1;
+    oled_set_cursor(0, 2);
+    oled_write_P(PSTR(" "), false);
   }else{
 	  //no press
 	  keypressdetected = 0;
+      oled_set_cursor(0, 2);
+      oled_write_P(PSTR("Press!"), false);
   }
 }
 #endif

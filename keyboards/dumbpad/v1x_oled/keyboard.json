@@ -22,7 +22,8 @@
         "oled": true,
         "wpm": true,
         "mousekey": true,
-        "joystick":true
+        "joystick":true,
+        "encoder_map":true
     },
     "layouts": {
         "LAYOUT": {
